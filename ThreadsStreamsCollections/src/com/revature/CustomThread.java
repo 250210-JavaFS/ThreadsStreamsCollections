@@ -17,9 +17,15 @@ public class CustomThread implements Runnable {
 
         for (int i = 0; i < 10; i++){
             System.out.println(name + " is on iteration " + (i + 1));
+
+            //Make the threads sleep, which just makes it wait for x amount of milliseconds between loops
+            try{
+                Thread.sleep(500);
+            } catch(InterruptedException e){
+                e.printStackTrace();
+            }
+
         }
-        
-        //TODO: maybe make the threads sleep
 
     }
 }
