@@ -3,6 +3,7 @@ package com.revature;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.LinkedList;
 
 public class CollectionsLauncher {
 
@@ -72,6 +73,24 @@ public class CollectionsLauncher {
         HashSet<String> foodSet = new HashSet<>(foodList);
 
         System.out.println("(QUEUES)============================");
+
+        //Queues are collections that follow the FIFO (First In, First Out) principle
+        //LinkedList is a type of Queue that uses a doubly-linked list to store elements
+            //This means that it's very fast to add and remove elements from the beginning and end
+            //It also implements the List interface, ctrl + click to check the implementation!
+        LinkedList<String> orders = new LinkedList<>();
+
+        orders.add("Some Roast Beef");
+        orders.add("Some Chicken");
+        orders.add("A Pizza");
+
+        //ifEmpty() returns true if the queue is empty
+        while (!orders.isEmpty()){
+            System.out.println("Now preparing: " + orders.peek()); //peek() returns the first element without removing it
+            System.out.println("Now serving: " + orders.poll()); //poll() returns the first element AND removes it
+        }
+
+        System.out.println("All orders have been served!");
 
     }
 }
